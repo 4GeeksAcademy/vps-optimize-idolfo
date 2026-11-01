@@ -1,0 +1,102 @@
+=== VPS OPTIMIZATION REPORT ===
+Date: Sun Nov  1 20:03:55 UTC 2026
+Hostname: bc-vps-602
+
+=== OPERATING SYSTEM ===
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+=== FINAL MEMORY ===
+               total        used        free      shared  buff/cache   available
+Mem:           957Mi       142Mi       345Mi       3.0Mi       469Mi       671Mi
+Swap:             0B          0B          0B
+
+=== FINAL DISK ===
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            96M  984K   95M   2% /run
+/dev/vda1        25G  2.0G   23G   9% /
+tmpfs           479M     0  479M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/vda15      105M  6.1M   99M   6% /boot/efi
+tmpfs            96M  4.0K   96M   1% /run/user/0
+
+=== RUNNING SERVICES ===
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  droplet-agent.service       loaded active running The DigitalOcean Droplet Agent
+  getty@tty1.service          loaded active running Getty on tty1
+  networkd-dispatcher.service loaded active running Dispatcher daemon for systemd-networkd
+  rsyslog.service             loaded active running System Logging Service
+  serial-getty@ttyS0.service  loaded active running Serial Getty on ttyS0
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-networkd.service    loaded active running Network Configuration
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-timesyncd.service   loaded active running Network Time Synchronization
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  user@0.service              loaded active running User Manager for UID 0
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+16 loaded units listed.
+
+=== DISABLED SERVICES ===
+disabled
+disabled
+disabled
+disabled
+LXD Snap services disabled and inactive (verified earlier)
+
+=== OPTIMIZATION SUMMARY ===
+Disabled multipathd, LXD services, and snapd.
+Original RAM: 160 MiB used, 645 MiB available.
+Last measured RAM: 142 MiB used, 671 MiB available.
+Observed reduction in used RAM: 18 MiB.
+
+=== DEPLOYMENT READINESS ===
+Resource optimization is complete.
+SSH and essential network services remain available.
+Application-specific requirements must be verified before deployment.
+
+=== VPS OPTIMIZATION RESULTS ===
+
++-------------------+------------+------------+------------------+
+| Metric            | Before     | After      | Change           |
++-------------------+------------+------------+------------------+
+| Total RAM         | 957 MiB    | 957 MiB    | No change        |
+| Used RAM          | 160 MiB    | 142 MiB    | -18 MiB (11.25%) |
+| Free RAM          | 497 MiB    | 345 MiB    | -152 MiB         |
+| Buff/Cache        | 299 MiB    | 469 MiB    | +170 MiB         |
+| Available RAM     | 645 MiB    | 671 MiB    | +26 MiB (4.03%)  |
+| Running Services  | 18         | 16         | -2 services      |
+| Root Disk Used    | 1.9 GiB    | 2.0 GiB    | +0.1 GiB         |
+| Root Disk Free    | 23 GiB     | 23 GiB     | No major change  |
++-------------------+------------+------------+------------------+
+
+SUMMARY:
+- Used RAM decreased by 18 MiB (11.25%).
+- Available RAM increased by 26 MiB (4.03%).
+- Running services decreased from 18 to 16.
+- multipathd, LXD, and snapd services were disabled.
+- No packages were uninstalled.
+- Swap configuration was left unchanged.
+- All changes can be reversed by re-enabling the services.
+
+NOTE:
+RAM values are point-in-time measurements and may fluctuate
+due to operating system caching and background activity.
+Disabling snapd also suspends normal Snap package updates.
